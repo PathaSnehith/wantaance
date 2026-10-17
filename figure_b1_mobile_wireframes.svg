@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 620" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Inter, sans-serif; font-size: 18px; font-weight: bold; fill: #1e293b; }
+      .phone-frame { fill: #0f172a; rx: 32; }
+      .phone-screen { fill: #f8fafc; rx: 24; }
+      .phone-notch { fill: #0f172a; rx: 8; }
+      .screen-title { font-family: 'Segoe UI', Inter, sans-serif; font-size: 13px; font-weight: bold; fill: #0f172a; }
+      .card-green { fill: #ecfdf5; stroke: #10b981; stroke-width: 1.5; rx: 8; }
+      .card-red { fill: #fef2f2; stroke: #ef4444; stroke-width: 1.5; rx: 8; }
+      .card-amber { fill: #fffbeb; stroke: #f59e0b; stroke-width: 1.5; rx: 8; }
+      .card-blue { fill: #eff6ff; stroke: #3b82f6; stroke-width: 1.5; rx: 8; }
+      .ui-text { font-family: 'Segoe UI', Inter, sans-serif; font-size: 11px; fill: #334155; }
+      .ui-bold { font-family: 'Segoe UI', Inter, sans-serif; font-size: 11.5px; font-weight: bold; fill: #0f172a; }
+      .btn-primary { fill: #2563eb; rx: 6; }
+      .btn-danger { fill: #dc2626; rx: 6; }
+      .btn-success { fill: #16a34a; rx: 6; }
+      .btn-text { font-family: 'Segoe UI', Inter, sans-serif; font-size: 10px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="950" height="620" fill="#f1f5f9"/>
+
+  <text x="40" y="40" class="title">FIGURE B-1: VARDHAN STEELWARE — PHASE 1 MOBILE INTERFACE WIREFRAMES</text>
+  <text x="40" y="62" font-family="'Segoe UI', Inter, sans-serif" font-size="12px" fill="#64748b">Designed for Ramesh's 5.5" Smartphone on the Factory Floor &amp; Suresh's Morning Tea Table</text>
+
+  <!-- SCREEN 1: Suresh's Morning Malik Snapshot -->
+  <g transform="translate(40, 85)">
+    <!-- Phone casing -->
+    <rect width="260" height="500" class="phone-frame"/>
+    <rect x="8" y="8" width="244" height="484" class="phone-screen"/>
+    <rect x="85" y="14" width="90" height="14" class="phone-notch"/>
+
+    <!-- Screen Content -->
+    <text x="24" y="52" class="screen-title">SURESH VIEW (मालिका दृश्य)</text>
+    <text x="24" y="68" class="ui-text" style="font-size: 10px; fill: #64748b;">Diwali Countdown: 18 Days Left</text>
+
+    <!-- Stat 1: Dispatched Today -->
+    <rect x="20" y="82" width="220" height="65" class="card-green"/>
+    <text x="32" y="103" class="ui-bold" style="fill: #065f46;">DISPATCHED TODAY (आज का माल)</text>
+    <text x="32" y="126" font-family="sans-serif" font-size="18px" font-weight="bold" fill="#047857">₹2,85,000</text>
+    <text x="145" y="126" class="ui-text" style="fill: #065f46;">(6 Gaadi Loaded)</text>
+
+    <!-- Stat 2: Stuck in Polish -->
+    <rect x="20" y="157" width="220" height="75" class="card-amber"/>
+    <text x="32" y="178" class="ui-bold" style="fill: #92400e;">ATKA MAAL - POLISH (अटका माल)</text>
+    <text x="32" y="198" font-family="sans-serif" font-size="15px" font-weight="bold" fill="#b45309">5 Orders &gt; 48h Delayed</text>
+    <text x="32" y="218" class="ui-text" style="fill: #78350f;">Top: Karigar Pappu (420kg Kadai)</text>
+
+    <!-- Stat 3: Payment Hold -->
+    <rect x="20" y="242" width="220" height="85" class="card-red"/>
+    <text x="32" y="263" class="ui-bold" style="fill: #991b1b;">PAYMENT HOLD (पेमेंट रुकी)</text>
+    <text x="32" y="283" class="ui-text" style="font-weight: bold; fill: #b91c1c;">Sharma Bartan (Karnal)</text>
+    <text x="32" y="299" class="ui-text" style="fill: #7f1d1d;">Dues: ₹1.8L | Order: ₹26,200</text>
+    
+    <rect x="32" y="306" width="95" height="16" class="btn-success"/>
+    <text x="79" y="318" class="btn-text">APPROVE RELEASE</text>
+    
+    <rect x="135" y="306" width="95" height="16" class="btn-danger"/>
+    <text x="182" y="318" class="btn-text">CALL PARTY</text>
+
+    <!-- Quick action buttons -->
+    <rect x="20" y="340" width="220" height="40" class="btn-primary"/>
+    <text x="130" y="364" class="btn-text" style="font-size: 12px;">WHATSAPP MORNING REPORT</text>
+  </g>
+
+  <!-- SCREEN 2: Ramesh's 3-Tap Dispatch Khata -->
+  <g transform="translate(345, 85)">
+    <!-- Phone casing -->
+    <rect width="260" height="500" class="phone-frame"/>
+    <rect x="8" y="8" width="244" height="484" class="phone-screen"/>
+    <rect x="85" y="14" width="90" height="14" class="phone-notch"/>
+
+    <!-- Screen Content -->
+    <text x="24" y="52" class="screen-title">RAMESH FLOOR (रमेश खाता)</text>
+    
+    <!-- Filter tabs -->
+    <rect x="20" y="70" width="68" height="24" fill="#2563eb" rx="4"/>
+    <text x="54" y="86" class="btn-text">POLISH (5)</text>
+    <rect x="94" y="70" width="70" height="24" fill="#e2e8f0" rx="4"/>
+    <text x="129" y="86" class="ui-text" style="font-size: 10px; text-anchor: middle;">PACKING (8)</text>
+    <rect x="170" y="70" width="70" height="24" fill="#e2e8f0" rx="4"/>
+    <text x="205" y="86" class="ui-text" style="font-size: 10px; text-anchor: middle;">DISPATCH (12)</text>
+
+    <!-- Order Item Card 1 -->
+    <rect x="20" y="105" width="220" height="105" class="card-amber"/>
+    <text x="30" y="125" class="ui-bold">Bansal &amp; Sons (Rohtak)</text>
+    <text x="30" y="142" class="ui-text">Item: Tope No.6 — 120 pcs</text>
+    <text x="30" y="158" class="ui-text" style="color: #b45309; font-weight: bold;">Karigar: Pappu (Sent: 03 Sep)</text>
+    
+    <!-- 2 Big Action Buttons -->
+    <rect x="30" y="168" width="98" height="30" class="btn-success"/>
+    <text x="79" y="187" class="btn-text" style="font-size: 11px;">AAGAYA (RECEIVE)</text>
+    
+    <rect x="135" y="168" width="95" height="30" class="btn-primary"/>
+    <text x="182" y="187" class="btn-text" style="font-size: 11px;">REMIND PAPPU</text>
+
+    <!-- Order Item Card 2: Blocked by payment -->
+    <rect x="20" y="222" width="220" height="85" class="card-red"/>
+    <text x="30" y="242" class="ui-bold">Sharma Bartan (Karnal)</text>
+    <text x="30" y="258" class="ui-text">Item: Gilas 300ml — 30 dozen</text>
+    <rect x="30" y="268" width="100" height="22" fill="#ef4444" rx="4"/>
+    <text x="80" y="283" class="btn-text">🔒 MALIK PAYMENT HOLD</text>
+    <text x="140" y="283" class="ui-text" style="font-size: 9.5px; fill: #dc2626;">Dispatch Blocked</text>
+
+    <!-- Order Item Card 3: Ready to ship -->
+    <rect x="20" y="318" width="220" height="95" class="card-green"/>
+    <text x="30" y="338" class="ui-bold">New Delhi Steel House</text>
+    <text x="30" y="354" class="ui-text">Item: Thali 12 inch — 50 dozen</text>
+    <text x="30" y="370" class="ui-text" style="fill: #15803d; font-weight: bold;">Status: Packed in 10 Gunny Bags</text>
+    
+    <rect x="30" y="378" width="200" height="26" class="btn-primary"/>
+    <text x="130" y="395" class="btn-text">GAADI MEIN LOAD HUA (BILTY CUT)</text>
+  </g>
+
+  <!-- SCREEN 3: Munshi ji's Karigar Weight Loss Audit -->
+  <g transform="translate(650, 85)">
+    <!-- Phone casing -->
+    <rect width="260" height="500" class="phone-frame"/>
+    <rect x="8" y="8" width="244" height="484" class="phone-screen"/>
+    <rect x="85" y="14" width="90" height="14" class="phone-notch"/>
+
+    <!-- Screen Content -->
+    <text x="24" y="52" class="screen-title">KARIGAR AUDIT (धातु हिसाब)</text>
+    <text x="24" y="68" class="ui-text" style="font-size: 10px; fill: #64748b;">Munshi ji / Reconciliation</text>
+
+    <!-- Karigar reconciliation box -->
+    <rect x="20" y="85" width="220" height="165" class="card-red"/>
+    <text x="30" y="105" class="ui-bold" style="fill: #b91c1c;">LOT #402: KARIGAR PAPPU</text>
+    <text x="30" y="125" class="ui-text">Item: Kadai No.10</text>
+    <text x="30" y="143" class="ui-text">Metal Issued: <tspan font-weight="bold">420.0 kg</tspan></text>
+    <text x="30" y="161" class="ui-text">Returned: <tspan font-weight="bold">1,180 pcs (408.0 kg)</tspan></text>
+    <text x="30" y="179" class="ui-text">Standard Loss Allowed: 6.0 kg (1.4%)</text>
+    <line x1="30" y1="188" x2="230" y2="188" stroke="#fca5a5" stroke-width="1"/>
+    <text x="30" y="206" class="ui-bold" style="fill: #dc2626;">UNEXPLAINED LOSS: -6.0 kg</text>
+    <text x="30" y="224" class="ui-text" style="fill: #991b1b; font-weight: bold;">Cash Loss: ₹1,260 (Deduct Bill)</text>
+    <rect x="30" y="230" width="200" height="15" class="btn-danger"/>
+    <text x="130" y="241" class="btn-text">APPLY KARIGAR BILL CUT</text>
+
+    <!-- Second Karigar Normal -->
+    <rect x="20" y="260" width="220" height="110" class="card-green"/>
+    <text x="30" y="280" class="ui-bold" style="fill: #065f46;">LOT #403: KARIGAR BABLOO</text>
+    <text x="30" y="298" class="ui-text">Item: Patila Set 5pc</text>
+    <text x="30" y="316" class="ui-text">Issued: 300.0 kg | Returned: 297.2 kg</text>
+    <text x="30" y="334" class="ui-text">Variance: -0.9% (WITHIN LIMIT)</text>
+    <text x="30" y="352" class="ui-bold" style="fill: #15803d;">STATUS: APPROVED FOR PAYMENT</text>
+
+    <!-- Tally export -->
+    <rect x="20" y="385" width="220" height="38" class="btn-primary"/>
+    <text x="130" y="408" class="btn-text" style="font-size: 11px;">EXPORT DAYBOOK TO TALLY</text>
+  </g>
+</svg>

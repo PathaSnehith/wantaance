@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-family: 'Courier New', monospace; font-size: 13px; fill: #555; }
+      .box { fill: #fffef8; stroke: #2c3e50; stroke-width: 2; stroke-dasharray: 4, 1; rx: 8; }
+      .box-highlight { fill: #fdf2e9; stroke: #d35400; stroke-width: 2.5; rx: 8; }
+      .box-alert { fill: #fdedec; stroke: #c0392b; stroke-width: 2.5; rx: 8; }
+      .text-head { font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; fill: #2c3e50; }
+      .text-body { font-family: 'Courier New', monospace; font-size: 11.5px; fill: #333; }
+      .text-tag { font-family: 'Courier New', monospace; font-size: 10.5px; font-weight: bold; fill: #7f8c8d; }
+      .arrow { stroke: #2c3e50; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .arrow-leak { stroke: #c0392b; stroke-width: 2; stroke-dasharray: 5, 3; fill: none; marker-end: url(#red-arrow); }
+      .label-leak { font-family: 'Courier New', monospace; font-size: 11px; fill: #c0392b; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2c3e50" />
+    </marker>
+    <marker id="red-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#c0392b" />
+    </marker>
+  </defs>
+
+  <!-- Background paper texture effect -->
+  <rect width="900" height="1150" fill="#faf9f5"/>
+  <rect x="25" y="25" width="850" height="1100" fill="#ffffff" stroke="#dcdde1" stroke-width="1.5" rx="10"/>
+
+  <!-- Header -->
+  <text x="50" y="65" class="title">FIGURE A-1: ORDER-TO-DELIVERY PROCESS MAP (AS-IS)</text>
+  <text x="50" y="88" class="subtitle">Sharma Precision Engineering &amp; Laser Works | Mayapuri Industrial Area, New Delhi</text>
+  <line x1="50" y1="102" x2="850" y2="102" stroke="#bdc3c7" stroke-width="1.5"/>
+
+  <!-- Step 1: Customer Inquiry -->
+  <rect x="60" y="125" width="360" height="90" class="box" />
+  <text x="75" y="150" class="text-head">1. INQUIRY &amp; DRAWING RECEIPT</text>
+  <text x="75" y="172" class="text-body">• Customer sends DXF / PDF via WhatsApp</text>
+  <text x="75" y="190" class="text-body">• Rakesh quotes price roughly on paper notepad</text>
+  <text x="75" y="205" class="text-tag">[ACTOR: Rakesh (Owner) | TOOL: WhatsApp]</text>
+
+  <!-- Step 2: Order Logging -->
+  <rect x="480" y="125" width="360" height="90" class="box" />
+  <text x="495" y="150" class="text-head">2. LOGGING IN "BAHI-KHATA"</text>
+  <text x="495" y="172" class="text-body">• Customer name handwritten in desk ledger</text>
+  <text x="495" y="190" class="text-body">• Yellow carbon-copy job ticket drafted</text>
+  <text x="495" y="205" class="text-tag">[ACTOR: Rakesh / Draftsman | TOOL: Paper Register]</text>
+
+  <path d="M 420 170 L 480 170" class="arrow" />
+
+  <!-- Arrow down to Nesting -->
+  <path d="M 660 215 L 660 260 L 240 260 L 240 285" class="arrow" />
+
+  <!-- Step 3: CAD Nesting & Sheet Check -->
+  <rect x="60" y="285" width="360" height="95" class="box" />
+  <text x="75" y="310" class="text-head">3. CAD NESTING &amp; RAW SHEET CHECK</text>
+  <text x="75" y="330" class="text-body">• Draftsman nests on Radan software</text>
+  <text x="75" y="348" class="text-body">• Physical sheet check in rack (CRCA / SS304)</text>
+  <text x="75" y="365" class="text-tag">[ACTOR: CAD Operator + Helper | TOOL: Nesting PC]</text>
+
+  <!-- Step 4: CNC Laser Cutting -->
+  <rect x="480" y="285" width="360" height="95" class="box-alert" />
+  <text x="495" y="310" class="text-head">4. CNC FIBER LASER CUTTING</text>
+  <text x="495" y="330" class="text-body">• Job ticket clipped to magnetic board</text>
+  <text x="495" y="348" class="text-body">• Sheets cut; edges deburred by hand</text>
+  <text x="495" y="365" class="text-tag">[ACTOR: Manoj (Laser Operator) | High Skill Bottleneck]</text>
+
+  <path d="M 420 332 L 480 332" class="arrow" />
+
+  <!-- Leak 1: Drawing revision desync -->
+  <path d="M 660 380 L 660 415 L 750 415" class="arrow-leak" />
+  <text x="520" y="435" class="label-leak">⚠️ LEAK: Client sends "Rev-2" on WhatsApp after Rev-1 cut</text>
+  <text x="520" y="450" class="label-leak">   Scrap cost: ₹30,000/mo born by factory</text>
+
+  <!-- Arrow to step 5 -->
+  <path d="M 480 350 L 450 350 L 450 480 L 240 480 L 240 500" class="arrow" />
+
+  <!-- Step 5: Press Brake Bending -->
+  <rect x="60" y="500" width="360" height="90" class="box" />
+  <text x="75" y="525" class="text-head">5. CNC PRESS BRAKE BENDING</text>
+  <text x="75" y="545" class="text-body">• Parts bent according to printed 2D drawing</text>
+  <text x="75" y="563" class="text-body">• Stud welding &amp; corner seam tacking</text>
+  <text x="75" y="578" class="text-tag">[ACTOR: Bending Karigar + Senior Welder]</text>
+
+  <!-- Step 6: Outside Powder Coating -->
+  <rect x="480" y="500" width="360" height="95" class="box-alert" />
+  <text x="495" y="525" class="text-head">6. OUTSIDE JOB-WORK (POWDER COATING)</text>
+  <text x="495" y="545" class="text-body">• Loaded on 3-wheeler tempo to Mayapuri vendor</text>
+  <text x="495" y="563" class="text-body">• Tracked via informal pink challan slip</text>
+  <text x="495" y="580" class="text-tag">[ACTOR: Tempo Driver + Outside Coater | BLACK HOLE]</text>
+
+  <path d="M 420 545 L 480 545" class="arrow" />
+
+  <!-- Leak 2: Vendor black hole -->
+  <path d="M 660 595 L 660 635 L 750 635" class="arrow-leak" />
+  <text x="520" y="650" class="label-leak">⚠️ BLACK HOLE: Zero WIP visibility for 3-5 days</text>
+  <text x="520" y="665" class="label-leak">   Wrong RAL shade / paint peeling caught only on return</text>
+
+  <!-- Step 7: Inward QC & Assembly -->
+  <rect x="60" y="700" width="360" height="90" class="box" />
+  <text x="75" y="725" class="text-head">7. INWARD QC &amp; FINAL FITTING</text>
+  <text x="75" y="745" class="text-body">• Visual check for scratches &amp; paint run</text>
+  <text x="75" y="763" class="text-body">• Hardware assembly (locks, rubber gaskets)</text>
+  <text x="75" y="778" class="text-tag">[ACTOR: Senior Fitter / Rakesh]</text>
+
+  <!-- Step 8: Packing & Dispatch -->
+  <rect x="480" y="700" width="360" height="95" class="box-highlight" />
+  <text x="495" y="725" class="text-head">8. DISPATCH &amp; TALLY INVOICE</text>
+  <text x="495" y="745" class="text-body">• Wrapped in corrugated roll / stretch film</text>
+  <text x="495" y="763" class="text-body">• Loaded onto client vehicle / local transport</text>
+  <text x="495" y="780" class="text-tag">[ACTOR: Munshi ji (Tally GST) + Tempo Driver]</text>
+
+  <path d="M 660 670 L 660 700" class="arrow" />
+  <path d="M 420 745 L 480 745" class="arrow" />
+
+  <!-- Summary of Critical Bottlenecks -->
+  <rect x="60" y="830" width="780" height="260" fill="#f8f9fa" stroke="#2c3e50" stroke-width="1.5" rx="6" />
+  <text x="80" y="865" class="text-head" style="font-size: 15px; fill: #c0392b;">CRITICAL AUDIT OBSERVATIONS (WHY THIS MIRRORS VARDHAN STEELWARE):</text>
+  
+  <text x="80" y="895" class="text-body" style="font-weight: bold;">1. THE CEREMONIAL REGISTER TRAP:</text>
+  <text x="95" y="915" class="text-body">The hardcover register on Rakesh's desk is never referenced by floor workers. The shop runs on Manoj's</text>
+  <text x="95" y="930" class="text-body">memory and WhatsApp chat scraps—identical to Ramesh's pocket diary at Vardhan.</text>
+
+  <text x="80" y="960" class="text-body" style="font-weight: bold;">2. JOB-WORK BLINDSPOT (POWDER COATING = POLISHING):</text>
+  <text x="95" y="980" class="text-body">Just like Vardhan's karigars holding Kadai/Bhagona stock, Sharma loses control the moment parts leave</text>
+  <text x="95" y="995" class="text-body">the gate for powder coating. Delayed outside processing accounts for 70% of customer delivery delays.</text>
+
+  <text x="80" y="1025" class="text-body" style="font-weight: bold;">3. THE PHONE BLUFF ("MAAL LOAD HO RAHA HAI"):</text>
+  <text x="95" y="1045" class="text-body">Because the owner cannot check status from his desk, he routinely fabricates dispatch updates to pacify</text>
+  <text x="95" y="1060" class="text-body">distributors, then sprints to the shop floor to investigate the actual truth.</text>
+</svg>

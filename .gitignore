@@ -1,0 +1,15 @@
+# Operating System Files
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Logs and Temp
+*.log
+scratch/
+tmp/
+.temp/
+
+# Node / Python if any
+node_modules/
+__pycache__/
+*.pyc

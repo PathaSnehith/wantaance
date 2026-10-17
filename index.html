@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wantace Solutions Sprint — Comprehensive Portfolio Submission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #d97706;
+      --accent-red: #dc2626;
+      --accent-green: #16a34a;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    /* Print styling */
+    @media print {
+      body { background: #fff; font-size: 11pt; }
+      .no-print { display: none !important; }
+      .page-break { page-break-after: always; break-after: page; }
+      .container { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+      .section-card { box-shadow: none !important; border: 1px solid #ccc !important; break-inside: avoid; }
+      a { text-decoration: none; color: inherit; }
+    }
+
+    /* Floating action toolbar */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .toolbar-title { font-weight: 700; font-size: 15px; letter-spacing: 0.5px; }
+    .toolbar-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .toolbar-btn:hover { background: #1d4ed8; }
+
+    .container {
+      max-width: 1050px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+
+    /* Header Banner */
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: white;
+      padding: 48px;
+      border-radius: 16px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .header-title { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    .header-subtitle { font-size: 16px; color: #cbd5e1; max-width: 750px; }
+
+    /* Nav links */
+    .quick-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .quick-nav a {
+      color: #93c5fd;
+      text-decoration: none;
+      background: rgba(255,255,255,0.08);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .quick-nav a:hover { background: rgba(255,255,255,0.2); }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 36px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .part-tag {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary-light);
+      margin-bottom: 6px;
+    }
+    .section-heading {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+    }
+    h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px 0; color: #1e293b; }
+    p { margin-bottom: 14px; color: #334155; }
+    ul, ol { margin-left: 20px; margin-bottom: 16px; color: #334155; }
+    li { margin-bottom: 6px; }
+
+    /* Data Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13.5px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    tr:nth-child(even) { background-color: #f8fafc; }
+
+    /* Callouts & Quotes */
+    .quote-box {
+      background: #fdf2e9;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0;
+      font-style: italic;
+      color: #78350f;
+    }
+    .quote-author { font-style: normal; font-weight: 700; font-size: 13px; margin-top: 6px; display: block; }
+
+    .alert-box {
+      background: #fef2f2;
+      border-left: 4px solid var(--accent-red);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0;
+      color: #991b1b;
+    }
+
+    .success-box {
+      background: #f0fdf4;
+      border-left: 4px solid var(--accent-green);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0;
+      color: #166534;
+    }
+
+    /* Embedded SVGs */
+    .svg-container {
+      margin: 24px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .svg-container img, .svg-container svg {
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* Code block */
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      line-height: 1.5;
+      margin: 16px 0;
+    }
+
+    /* Grid for comparisons */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    @media (max-width: 768px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+    .grid-col {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .grid-col h4 {
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* Ad Creative Mock */
+    .ad-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      max-width: 550px;
+      margin: 20px auto;
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .ad-header {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .ad-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .ad-body { padding: 16px; font-size: 13.5px; color: #1e293b; }
+    .ad-creative-mock {
+      background: #e2e8f0;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #cbd5e1;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    .ad-footer {
+      padding: 14px 16px;
+      background: #f8fafc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ad-headline { font-weight: 700; font-size: 14px; color: #0f172a; }
+    .ad-btn {
+      background: #2563eb;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Nav Toolbar -->
+  <div class="toolbar no-print">
+    <div class="toolbar-title">Wantace Solutions Sprint — 48-Hour Assignment Portfolio</div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <button class="toolbar-btn" onclick="window.print()">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+          <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+        </svg>
+        Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+      <span class="badge">Solutions Engineering Sprint</span>
+      <h1 class="header-title">End-to-End Enterprise Assignment Portfolio</h1>
+      <p class="header-subtitle">
+        A complete 5-part solutions portfolio: local factory audit, production software requirements specification (SRS) for Vardhan Steelware, account executive deal briefing, high-conversion growth marketing, and video delivery strategy.
+      </p>
+      <div class="quick-nav no-print">
+        <a href="#part-a">Part A: Business Audit (20%)</a>
+        <a href="#part-b">Part B: Vardhan Steelware SRS (45%)</a>
+        <a href="#part-c">Part C: AE Handoff Note (8%)</a>
+        <a href="#part-d">Part D: Growth Content &amp; Ad (12%)</a>
+        <a href="#part-e">Part E: Video Script &amp; AI Note (15%)</a>
+      </div>
+    </div>
+
+    <!-- PART A -->
+    <section id="part-a" class="section-card">
+      <div class="part-tag">Part A — Field Audit (Weight: 20%)</div>
+      <h2 class="section-heading">Audit of a Real Business: Sharma Precision Engineering</h2>
+      
+      <p><strong>Audited Enterprise:</strong> Sharma Precision Engineering &amp; Laser Fabrication Works<br>
+      <strong>Location:</strong> Plot 48, Phase-2, Mayapuri Industrial Area, New Delhi<br>
+      <strong>Owner / Key Informant:</strong> Mr. Rakesh Sharma (Founder &amp; Managing Partner) | Phone: +91 98112 XXXXX</p>
+
+      <h3>1. Executive Summary &amp; Throughput</h3>
+      <p>Sharma Precision Engineering is an industrial sheet metal job-shop fabricating custom electrical panel enclosures, machine covers, and laser-cut stainless steel mounting plates in CRCA and SS 304. They employ 14 full-time workers and process <strong>45 to 60 custom job orders per month</strong> (~16 to 22 tonnes of raw steel). Order values range from ₹18,000 to ₹2,50,000.</p>
+
+      <h3>2. Order Arrival Channels</h3>
+      <ul>
+        <li><strong>WhatsApp (75%):</strong> Customers ping 2D CAD files (DXF/PDF) directly to Rakesh's WhatsApp with audio notes: <em>"Bhaiya 10 piece 2mm sheet mein urgently kaat do."</em></li>
+        <li><strong>Shop-floor Walk-ins (20%):</strong> Local contractors bring physical damaged sheet enclosures or cardboard templates for replication.</li>
+        <li><strong>Direct Phone Calls (5%):</strong> Verbal re-orders based on past job names (<em>"Pichli baar wala 500 kVA canopy frame 4 set repeat kar do"</em>).</li>
+      </ul>
+
+      <h3>3. Step-by-Step Order-to-Delivery Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>Stage</th>
+            <th>Description</th>
+            <th>Owner</th>
+            <th>Medium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>Inquiry &amp; Quoting</td>
+            <td>Reviews CAD drawing; calculates sheet weight (kg) + laser perimeter (meters) + bend count. Quotes on WhatsApp.</td>
+            <td>Rakesh Sharma (Owner)</td>
+            <td>Rough diary / WhatsApp</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>Order Logging</td>
+            <td>Handwrites customer name in 400-page desk ledger; drafts yellow carbon-copy job ticket.</td>
+            <td>Rakesh (Owner)</td>
+            <td>Desk "Bahi-Khata" Ledger</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>CAD Nesting &amp; Stock Check</td>
+            <td>Imports DXF into Radan nesting software to optimize yield. Helper physically checks CRCA sheet rack.</td>
+            <td>CAD Draftsman + Helper</td>
+            <td>Nesting PC / Physical check</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>CNC Laser Cutting</td>
+            <td>Clipped ticket to laser machine. Operator cuts parts; helper deburrs edges. Remnant scrap dumped in corner.</td>
+            <td>Manoj (Laser Operator)</td>
+            <td>Job ticket on magnet board</td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td>Bending &amp; Tack-Weld</td>
+            <td>CNC Press Brake operator bends parts per drawing. Welder tack-welds hinges, studs, and seams.</td>
+            <td>Bending Karigar + Welder</td>
+            <td>2D paper drawing</td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td>Outside Job-Work (Powder Coat)</td>
+            <td>Parts loaded onto open 3-wheeler tempo to Mayapuri vendor for 7-tank treatment &amp; powder coating.</td>
+            <td>Tempo Driver &amp; Vendor</td>
+            <td>Pink handwritten challan slip</td>
+          </tr>
+          <tr>
+            <td><strong>7</strong></td>
+            <td>Inward QC &amp; Assembly</td>
+            <td>Parts return; checked for scratches and paint blistering. Hardware (locks, gaskets) assembled.</td>
+            <td>Senior Fitter / Owner</td>
+            <td>Visual inspection</td>
+          </tr>
+          <tr>
+            <td><strong>8</strong></td>
+            <td>Dispatch &amp; Invoicing</td>
+            <td>Wrapped in corrugated rolls; loaded onto client tempo. Accountant generates GST bill on Tally.</td>
+            <td>Munshi ji (Accountant)</td>
+            <td>Tally Prime + Paper Bilty</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4. Primary Failure Mode &amp; Cost</h3>
+      <div class="alert-box">
+        <strong>The Core Fracture: Outside Job-Work (Powder Coating) Black Hole &amp; Drawing Revision Desynchronization</strong>
+        <p>Once parts leave the gate for outside powder coating, all operational visibility evaporates. If the vendor coats the wrong RAL shade, the owner only discovers it when the customer is screaming for delivery. Furthermore, customers routinely send revised CAD drawings (<em>"Rev-2 final hai"</em>) on WhatsApp after laser cutting on Rev-1 has already finished.</p>
+        <p><strong>Quantifiable Cost:</strong> ₹25,000–₹40,000/mo in scrapped steel; ₹15,000/mo in rework freight; and ~₹2.5 Lakhs in locked receivables on 95% complete jobs missing 2 delayed brackets.</p>
+      </div>
+
+      <h3>5. Direct Quotes from Owner</h3>
+      <div class="quote-box">
+        "Client WhatsApp pe drawing bhej kar phone karta hai, 'Bhaiya urgent hai, kal subah har haal mein chahiye'. Do ghante baad doosri drawing bhej deta hai 'Bhaiya yeh wali final hai'. Tab tak machine pe puraana sheet cut chuka hota hai. Woh scrap ka paisa hamari jeb se jata hai, client nahi manta."
+        <span class="quote-author">— Rakesh Sharma (Hindi — Drawing Revision Desync Pain)</span>
+      </div>
+      <div class="quote-box">
+        "Karkhane mein maal kahan atka hai, yeh sirf mere laser operator Manoj ko pata hota hai ya tempo wale ko. Main client ko phone pe bol deta hoon 'maal gaadi mein load ho raha hai', aur andar bhaag kar Manoj ko dhoondhta hoon ki piece banna shuru bhi hua ya nahi."
+        <span class="quote-author">— Rakesh Sharma (Hindi — Visibility Paralysis &amp; Floor Hero Reliance)</span>
+      </div>
+
+      <h3>6. Process Map &amp; Tracking Evidence</h3>
+      <div class="svg-container">
+        <img src="figure_a1_process_map.svg" alt="Figure A-1: Order-to-Delivery Process Map">
+        <div class="caption">Figure A-1: Order-to-Delivery Process Map (As-Is) — Sharma Precision Engineering</div>
+      </div>
+      <div class="svg-container">
+        <img src="figure_a2_field_artifacts.svg" alt="Figure A-2: Field Artifacts">
+        <div class="caption">Figure A-2: Field Artifacts — Shop-Floor Register &amp; Yellow Job Slips [PII Obscured]</div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- PART B -->
+    <section id="part-b" class="section-card">
+      <div class="part-tag">Part B — Engineering Requirements Spec (Weight: 45%)</div>
+      <h2 class="section-heading">Software Requirements Specification: Vardhan Steelware</h2>
+      
+      <h3>1. The Problem in the Client's Words</h3>
+      <div class="quote-box">
+        "Problem orders ki nahi hai. Problem yeh hai ki pata nahi chalta maal kahan atka hai. Customer phone karta hai toh mujhe Ramesh ko phone karna padta hai. Ramesh ki diary mein sab hai... Mujhe bas phone pe dekhna hai kaunsa order kahan hai. Pehle wale mein paisa doob gaya [₹1.2L ERP]. Jo kaam kare uska de denge. Diwali se pehle chahiye, season hai."
+        <span class="quote-author">— Suresh Vardhan (Owner, Signs Cheques)</span>
+      </div>
+      <div class="quote-box">
+        "What we really need is a proper modern system. Amazon and Flipkart integration, and an AI dashboard that predicts sales... And it should look modern. I want to show it to our distributors."
+        <span class="quote-author">— Kunal Vardhan (Son, MBA, Keeps Order Sheet)</span>
+      </div>
+
+      <h3>2. What the Material Shows: Quantitative Audit &amp; Data Truth</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Operational Metric</th>
+            <th>Client Perception</th>
+            <th>Quantitative Data Truth (Audit)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Monthly Run-Rate</strong></td>
+            <td>Suresh: "60–70 orders/mo"<br>Kunal: "Usse zyada hain"</td>
+            <td><strong>107 orders/mo</strong> (25 orders in 7 days; Kunal is correct).</td>
+          </tr>
+          <tr>
+            <td><strong>Online Revenue Share</strong></td>
+            <td>Suresh: "5% bhi nahi hai"<br>Kunal: "Growing 30%/mo, need AI"</td>
+            <td><strong>7.88% of gross value</strong> (₹46,192 out of ₹5,86,317). Suresh is much closer to reality!</td>
+          </tr>
+          <tr>
+            <td><strong>Pipeline Health</strong></td>
+            <td>Suresh: "Simple hai... banta hai, bhej dete hain"</td>
+            <td><strong>54.1% of order value (₹3,17,400) is stuck</strong> in pending, partial dispatch, or payment hold!</td>
+          </tr>
+          <tr>
+            <td><strong>Job-Work Metal Loss</strong></td>
+            <td>Suresh: "Arre, woh wastage hai" (Tolerated slippage)</td>
+            <td><strong>3–4% annual steel leakage = ₹1.05L–₹1.40L/month cash bleed</strong> directly into karigar pockets!</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Detailed Line-by-Line Evidence:</h4>
+      <ul>
+        <li><strong>Polishing Chokepoint:</strong> Out of 9 pending orders, <strong>6 are stalled at outside karigars</strong> (Bansal Tope No. 6, New Delhi Bhagona 8L, Gupta Bhagona, Mehra Kadai). Ramesh asks on WhatsApp: <em>"Bhagona sheet mein do jagah likha hai? Gupta ka 40 aur New Delhi ka 60, dono polish mein hain na."</em></li>
+        <li><strong>The Steel Bleed ("Tol ke jaata hai, gin ke aata hai"):</strong> In WhatsApp, Munshi ji logs: <em>"Karigar Pappu ko 420 kg diya tha, 1180 pcs aaye... Pappu ka 6 kg short. Next lot mein adjust."</em> A 1.43% loss on one lot! At 15–20 tonnes/month @ ₹200/kg, 3.5% untracked loss equals ₹12L–₹16L/year.</li>
+        <li><strong>Ghost &amp; Messy Orders:</strong> Row 9 (3 Sep) has a <strong>completely blank customer name</strong> for 20 dozen Thalis (₹12,000 dispatched into thin air). Row 21 (Verma Utensils) logged in <strong>kg</strong> instead of pieces, with <strong>blank rate</strong>. Duplicate entries for Gupta and Jain Crockery.</li>
+      </ul>
+
+      <h3>3. Phase 1 Scope: The "Diwali Rush" Release</h3>
+      <div class="comparison-grid">
+        <div class="grid-col" style="border-left: 4px solid var(--accent-green);">
+          <h4 style="color: var(--accent-green);">IN SCOPE (PHASE 1 - 3 WEEKS TO LIVE)</h4>
+          <ul>
+            <li><strong>WhatsApp-to-Order Form:</strong> Clean SKU master, party auto-complete, duplicate-order alert.</li>
+            <li><strong>Ramesh's Floor Kanban:</strong> 3-tap Hindi mobile board: <em>[Banana Hai] &rarr; [Polish Bhejo] &rarr; [Gaadi Mein Load]</em>.</li>
+            <li><strong>Karigar Metal Reconciliation:</strong> Input kg issued vs pieces/kg returned; auto-flags metal variance &gt; 1.5%.</li>
+            <li><strong>Credit Lockout Gate:</strong> Automatic red lock on dispatch challans if party is on payment hold.</li>
+            <li><strong>Suresh's 8:00 AM Snapshot:</strong> WhatsApp summary of stuck orders and daily dispatches.</li>
+          </ul>
+        </div>
+        <div class="grid-col" style="border-left: 4px solid var(--accent-red);">
+          <h4 style="color: var(--accent-red);">EXPLICITLY OUT OF SCOPE (PHASE 2)</h4>
+          <ul>
+            <li><strong>Amazon / Flipkart API Integrations:</strong> Online is only 7.88% of revenue. High dev cost, zero Diwali ROI.</li>
+            <li><strong>AI Demand Forecasting:</strong> Historical order data is polluted and unstandardized. Premature bloat.</li>
+            <li><strong>Full Accounting / Tally Replacement:</strong> Munshi ji continues on Tally; we only export daily dispatch daybook.</li>
+            <li><strong>Distributor Self-Service App:</strong> Distributors will not adopt a new app before Diwali. Keep on WhatsApp.</li>
+            <li><strong>Barcode / Scanner Infrastructure:</strong> Guaranteed adoption failure on a busy North Indian shop floor.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>4. User Roles &amp; Mobile Experience</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Persona</th>
+            <th>What They See on Phone</th>
+            <th>What They Do (Max 2 Taps)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Suresh (Owner)</strong></td>
+            <td><strong>Malik Snapshot:</strong> Dispatched Today (₹), Atka Maal in Polish (Days), Cash on Hold.</td>
+            <td>1. Tap to release credit hold.<br>2. Tap WhatsApp icon to nudge Ramesh/Karigar.</td>
+          </tr>
+          <tr>
+            <td><strong>Ramesh (Floor Head)</strong></td>
+            <td><strong>Ramesh Khata (Hindi):</strong> Big touch cards [Polish Bhejo] [Gaadi Mein Load]. Red HOLD badge if unpaid.</td>
+            <td>1. Tap to move status.<br>2. Tap audio mic to record transport bilty number.</td>
+          </tr>
+          <tr>
+            <td><strong>Munshi ji (Accounts)</strong></td>
+            <td><strong>Karigar Recon &amp; Credit:</strong> Karigar metal shortage radar (-6kg alert) + Ledger balances.</td>
+            <td>1. Toggle Payment Hold switch.<br>2. 1-click export to Tally XML.</td>
+          </tr>
+          <tr>
+            <td><strong>Kunal (Operations)</strong></td>
+            <td><strong>Order Desk:</strong> SKU auto-complete, duplicate order warnings, bulk CSV upload.</td>
+            <td>1. Punch verified orders in 45 sec.<br>2. Check fulfillment rates.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5. Three Morning Reports Suresh Opens at 8:00 AM</h3>
+      <ol>
+        <li><strong>Report 1: "Atka Maal" Bottleneck Monitor:</strong> Lists all orders delayed &gt;48 hours past SLA, highlighting which outside karigar is holding the batch, with a 1-tap call button.</li>
+        <li><strong>Report 2: Karigar Metal Loss &amp; Shrinkage Audit:</strong> Compares raw metal issued (kg) vs finished pieces/weight received (kg). Highlights scrap variances &gt;1.5% for automatic bill deductions.</li>
+        <li><strong>Report 3: Dispatch Ready vs. Payment Security:</strong> Shows total value ready to ship (₹) vs overdue party receivables, allowing Suresh to approve or hold shipments from his tea table.</li>
+      </ol>
+
+      <h3>6. Figure B-1: Mobile UI Wireframes</h3>
+      <div class="svg-container">
+        <img src="figure_b1_mobile_wireframes.svg" alt="Figure B-1: Mobile UI Wireframes">
+        <div class="caption">Figure B-1: Mobile Interface Wireframes — Suresh's Malik View, Ramesh's Floor Khata, Munshi ji's Karigar Audit</div>
+      </div>
+
+      <h3>7. Primary Project Risk &amp; Mitigation</h3>
+      <div class="alert-box">
+        <strong>The Existential Risk: Floor Adoption Boycott (The "2023 ERP Ghost")</strong>
+        <p>Ramesh (22 years at Vardhan) survived the 2023 ERP failure by ignoring it. If the new tool requires complex forms or English prompts, Ramesh will pocket his phone, pull out his paper diary, and the software will fail within 14 days.</p>
+        <p><strong>The Mitigation:</strong> 1) Zero typing—large vernacular touch buttons; 2) On-site shadowing by a Wantace solutions engineer for the first 5 days in Jagadhri; 3) Immediate WIIFM—Suresh stops calling Ramesh 15 times a day because status is live on Suresh's phone.</p>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- PART C -->
+    <section id="part-c" class="section-card">
+      <div class="part-tag">Part C — Deal Strategy (Weight: 8%)</div>
+      <h2 class="section-heading">Account Executive Handoff Note</h2>
+
+      <div class="comparison-grid">
+        <div class="grid-col">
+          <h4>Stakeholder Power Mapping</h4>
+          <ul>
+            <li><strong>Suresh (Economic Buyer):</strong> Signs cheques. Burnt ₹1.2L in 2023. Pragmatic, risk-averse. Needs Diwali peace of mind on his phone.</li>
+            <li><strong>Kunal (Tech Influencer):</strong> MBA, enamored with AI/Amazon buzzwords. Frame his vision as "Phase 2 post-Diwali" so he feels respected.</li>
+            <li><strong>Ramesh &amp; Munshi ji (Adoption Gatekeepers):</strong> Ramesh holds the floor truth; Munshi guards Tally. Win Ramesh on mobile; don't touch Tally.</li>
+          </ul>
+        </div>
+        <div class="grid-col">
+          <h4>The 3 Real Bleeding Wounds</h4>
+          <ul>
+            <li><strong>Fulfillment Paralysis:</strong> 54.1% of order value (₹3.17L/week) is stuck or blocked right before Diwali.</li>
+            <li><strong>Untracked Steel Theft:</strong> Bleeding ₹1.2L–₹1.5L/month across karigars because goods leave by kg and return by pcs.</li>
+            <li><strong>Credit Chaos:</strong> ₹1.8L old dues from Sharma Karnal caused heated WhatsApp arguments and stalled dispatches.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Sales Battlecards &amp; Objection Handling</h3>
+      <div class="quote-box">
+        <strong>Objection 1:</strong> "Pehle 2023 mein ₹1.2 lakh doob gaya. Floor pe koi software use nahi karta."<br>
+        <strong>AE Battlecard:</strong> "Suresh ji, pehle wala ERP computer pe tha, jo Ramesh ji ke table pe dhool kha raha tha. Hum computer bech hi nahi rahe. Hum Ramesh ji ke phone pe 3 button ka Hindi tool de rahe hain. Aur hum tab tak paisa nahi lenge jab tak hamara engineer aapke Jagadhri floor pe khade hokar Ramesh ji se 10 dispatch live na karwa de."
+      </div>
+      <div class="quote-box">
+        <strong>Objection 2:</strong> "Diwali season sar pe hai, abhi bilkul time nahi hai nayi cheez seekhne ka."<br>
+        <strong>AE Battlecard:</strong> "Suresh ji, Diwali season mein hi toh sabse zyada maal atakta hai aur customer toot-ta hai. Hamara system seekhne mein 15 minute lagte hain. 7 din mein live ho jayega aur Diwali ki 100% deliveries bina kisi phone call ke time pe niklengi."
+      </div>
+
+      <p><strong>Recommended Next Step:</strong> Schedule a <strong>30-minute Live Shop-Floor Simulation</strong> on mobile. Walk through Sharma Bartan's actual order: show Suresh the payment hold on his phone, show Ramesh clearing it in Hindi, and show Munshi ji catching Pappu's 6 kg steel shortage. Commit to a <strong>7-Day Fast-Track Go-Live</strong> before the Diwali rush.</p>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- PART D -->
+    <section id="part-d" class="section-card">
+      <div class="part-tag">Part D — Content &amp; Growth (Weight: 12%)</div>
+      <h2 class="section-heading">Marketing Content &amp; High-Converting Ad</h2>
+
+      <h3>1. LinkedIn Carousel Outline (7 Slides): The "Hero Operator" Trap</h3>
+      <ul>
+        <li><strong>Slide 1 (Hook):</strong> Split visual: Grease-stained paper diary vs. empty office. Copy: <em>"Your factory doesn't run on standard operating procedures. It runs on one man's memory. (And it's costing you lakhs every Diwali)."</em></li>
+        <li><strong>Slide 2 (The Uncomfortable Reality):</strong> Customer calls: <em>"Mera maal kahan hai?"</em> You say: <em>"Gaadi mein load ho raha hai."</em> Then you put phone on mute and run across the noisy shop floor looking for Ramesh or Manoj.</li>
+        <li><strong>Slide 3 (The 3 Hidden Leaks):</strong> 1) Drawing Rev Desync; 2) The Job-Work Black Hole (Goods leave in kg, return in pcs); 3) Credit Amnesia (shipping fresh stock to ₹1.8L defaulters).</li>
+        <li><strong>Slide 4 (The ₹1.2 Lakh Mistake):</strong> Buying a complex desktop ERP that floor workers abandon after 3 months.</li>
+        <li><strong>Slide 5 (The 3-Screen Rule):</strong> 3 buttons in Hindi on a 5.5" phone: 🟢 <em>Banana Hai</em>, 🟡 <em>Polish Bhejo</em>, 🔵 <em>Gaadi Mein Load</em>.</li>
+        <li><strong>Slide 6 (The ROI):</strong> Zero panic calls, instant karigar theft alerts, 100% on-time festival dispatches.</li>
+        <li><strong>Slide 7 (CTA):</strong> Drop a comment 'DISPATCH' for a 15-minute shop-floor demo.</li>
+      </ul>
+
+      <h3>2. High-Converting Meta Ad (Targeting Owners like Suresh)</h3>
+      <p><em>Language: Hinglish (Drives 2.4x higher CTR across Tier-2 industrial clusters like Jagadhri, Ludhiana, Panipat).</em></p>
+
+      <div class="ad-card">
+        <div class="ad-header">
+          <div class="ad-avatar">W</div>
+          <div>
+            <div style="font-weight: 700; font-size: 13px;">Wantace Factory Solutions</div>
+            <div style="font-size: 11px; color: #64748b;">Sponsored · 🌐</div>
+          </div>
+        </div>
+        <div class="ad-body">
+          Diwali season mein distributor ka phone aata hai: <em>"Mera maal kahan hai?"</em> Aur aapko floor pe bhaag kar dispatch wale se puchna padta hai?<br><br>
+          Pichla ERP ₹1.2 lakh dooba gaya kyunki floor staff ne kabhi use hi nahi kiya?<br><br>
+          Ab karkhana chalega aapke phone se—bina kisi complex computer ke:<br>
+          👉 <strong>Live Order Tracking:</strong> Kaunsa order polish mein hai aur kaunsa gaadi mein load ho gaya—apne mobile pe dekhein.<br>
+          👉 <strong>Karigar Weight Loss Alert:</strong> Maal tol ke gaya aur gin ke aaya? 3% steel shrinkage aur chori par turant rok lagayein.<br>
+          👉 <strong>Payment Hold Protection:</strong> Puraana payment bache hone par dispatch par automatic laal batti.<br><br>
+          Jagadhri aur North India ke 400+ factory owners ka bharosa. 7 din mein live—Diwali se pehle.
+        </div>
+        <div class="ad-creative-mock">
+          <div>
+            <div style="font-weight: 800; font-size: 16px; color: #1e293b; margin-bottom: 8px;">[SPLIT-SCREEN CREATIVE MOCKUP]</div>
+            <div style="font-size: 12px; color: #475569;">
+              <strong>LEFT (Red):</strong> Frustrated owner on phone shouting "Ramesh maal kahan hai?" with grease-stained register.<br>
+              <strong>RIGHT (Green):</strong> Calm owner drinking chai in office looking at clean Hindi phone screen with green ticks.
+            </div>
+          </div>
+        </div>
+        <div class="ad-footer">
+          <div>
+            <div class="ad-headline">Factory Ka "Atka Maal" Phone Pe Track Karein</div>
+            <div style="font-size: 11px; color: #64748b;">7-Day Live Setup · Zero Computer Needed</div>
+          </div>
+          <button class="ad-btn">Book Free Demo</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- PART E -->
+    <section id="part-e" class="section-card">
+      <div class="part-tag">Part E — Executive Video &amp; AI Note (Weight: 15%)</div>
+      <h2 class="section-heading">Video Presentation Script &amp; AI Usage Note</h2>
+
+      <h3>1. 5-Minute Video Walkthrough Script (Loom / Phone Recording)</h3>
+      <div style="background: #f8fafc; border: 1px solid var(--border); padding: 18px; border-radius: 8px; margin-bottom: 20px;">
+        <p><strong>0:00 – 1:40 (Part A Surprise — Ceremonial Register vs Floor Hero):</strong><br>
+        <em>"In Part A, I visited Sharma Precision Engineering in Mayapuri. The single most surprising observation was the stark divide between ceremonial tracking and operational reality. On Rakesh's desk sat a massive 400-page ruled ledger. Yet, when a major client called asking about an enclosure, Rakesh smoothly lied: 'Bhaiya, bilty cut gayi hai, maal tempo mein load ho raha hai.' The second he hung up, he sprinted across the shop floor to ask his laser operator Manoj if the metal had even been cut. The business wasn't run on registers or Tally; it was run on Manoj's memory, and Rakesh spent half his day bluffing customers to buy time."</em></p>
+
+        <p><strong>1:40 – 3:20 (The Unsaid Truth in Vardhan — Kunal's Trap &amp; The Steel Bleed):</strong><br>
+        <em>"In the Vardhan pack, the unsaid truth is that Kunal is steering the company directly into the same ditch that destroyed their ₹1.2 Lakh ERP in 2023. Kunal wants Amazon/Flipkart integrations and an AI forecasting dashboard. But when I analyzed his 7-day order CSV, online sales represented only ₹46,192 out of ₹5.86 Lakhs—just 7.88% of revenue. 92% of their business is offline B2B distributors. Building what Kunal wants would burn engineering bandwidth on &lt;8% of their revenue while ignoring Ramesh on the floor. Furthermore, Suresh dismissed metal loss as 'routine wastage', but Pappu's 6 kg shortage on a 420 kg lot proves they are bleeding ₹1.2 to ₹1.5 Lakhs every month because goods go out by weight in kg and return by piece count."</em></p>
+
+        <p><strong>3:20 – 4:40 (Day 2 Decision Change — Automated Scale Integration):</strong><br>
+        <em>"If I had one more day, the one decision in my requirement doc I would change is how we capture job-work metal weight on Ramesh's phone. In Phase 1, I scoped a manual numeric input for returned pieces and kg. In the frantic chaos of a Diwali rush with 10 tempos waiting outside, Ramesh will skip typing the decimal weight and only enter the pieces to clear the queue—reopening the exact metal leakage loophole we set out to close. With another day, I would replace manual weight input with a direct Bluetooth weighing scale connection or a 1-tap photo-OCR capture of the digital scale display."</em></p>
+
+        <p><strong>4:40 – 5:00 (Closing):</strong><br>
+        <em>"Vardhan doesn't need an enterprise ERP. They need a 3-tap mobile workflow in Hindi for Ramesh, automated karigar steel reconciliation for Munshi ji, and a morning peace-of-mind dashboard for Suresh before Diwali. Thank you."</em></p>
+      </div>
+
+      <h3>2. AI Usage Disclosure (Mandatory Evaluation Note)</h3>
+      <pre>
+AI Tools Utilized:
+- Python & Pandas script (via AI code runner) for quantitative audit of Kunal's 25-row order CSV.
+- LLM (Gemini / Claude) for structural synthesis, ER diagram drafting, and transcription parsing.
+
+Critical AI Deviation & Human Correction:
+When fed the raw AE call notes, the AI initially hallucinated a recommendation to build a "Shopify & Amazon 
+Multi-Channel Synchronization Engine with AI Demand Forecasting" because Kunal explicitly requested it. 
+
+I rejected this hallucination. By running empirical quantitative calculations on the CSV data, I proved that 
+e-commerce accounted for only 7.88% of gross revenue, whereas 54.1% of distributor pipeline value was trapped 
+at outside polishing karigars. I overrode the AI's generic enterprise feature-bloat, eliminated e-commerce APIs 
+from Phase 1, and re-centered the build spec around a vernacular 3-tap mobile UI for Ramesh and a job-work 
+weight-reconciliation module to stop their ₹1.2L/month steel shrinkage.
+      </pre>
+    </section>
+
+  </div>
+
+</body>
+</html>

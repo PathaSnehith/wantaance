@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; fill: #1a1a1a; }
+      .label { font-family: 'Courier New', monospace; font-size: 13px; font-weight: bold; fill: #2c3e50; }
+      .handwritten { font-family: 'Comic Sans MS', 'Caveat', 'Segoe Print', cursive, sans-serif; font-size: 13px; fill: #1a237e; }
+      .handwritten-red { font-family: 'Comic Sans MS', 'Caveat', 'Segoe Print', cursive, sans-serif; font-size: 13px; fill: #b71c1c; font-weight: bold; }
+      .stamp { font-family: 'Impact', sans-serif; font-size: 18px; fill: #c62828; transform: rotate(-8deg); letter-spacing: 2px; }
+      .card { fill: #fff; stroke: #95a5a6; stroke-width: 1.5; rx: 6; filter: drop-shadow(2px 3px 5px rgba(0,0,0,0.1)); }
+    </style>
+  </defs>
+
+  <rect width="900" height="700" fill="#f4f5f7"/>
+
+  <!-- Title Banner -->
+  <text x="40" y="45" class="title">FIGURE A-2: FIELD ARTIFACTS — SHOP-FLOOR TRACKING INFRASTRUCTURE</text>
+  <text x="40" y="68" font-family="'Courier New', monospace" font-size="12px" fill="#666">Sharma Precision Engineering (Mayapuri) | Photos &amp; Transcribed Field Evidence [PII Obscured]</text>
+  <line x1="40" y1="80" x2="860" y2="80" stroke="#ccc" stroke-width="1.5"/>
+
+  <!-- Left: Desk Register (Bahi Khata) -->
+  <g transform="translate(40, 100)">
+    <rect width="400" height="540" class="card" fill="#fffef7"/>
+    <!-- Binder spine -->
+    <rect x="0" y="0" width="22" height="540" fill="#8d6e63" rx="4"/>
+    <line x1="22" y1="0" x2="22" y2="540" stroke="#5d4037" stroke-width="2"/>
+    
+    <text x="40" y="35" class="label">ARTIFACT 1: OWNER'S DESK REGISTER ("BAHI-KHATA")</text>
+    <text x="40" y="55" font-family="'Courier New', monospace" font-size="10.5px" fill="#777">Physical 400-page ruled ledger; orders logged chronologically</text>
+    <line x1="30" y1="65" x2="385" y2="65" stroke="#e0e0e0" stroke-width="1"/>
+
+    <!-- Ledger lines & Handwritten Text -->
+    <!-- Row 1 -->
+    <line x1="30" y1="110" x2="385" y2="110" stroke="#bbdefb" stroke-width="1"/>
+    <text x="35" y="100" class="handwritten">04-Oct | A*** Controls | Panel Box 16G | 8 nos</text>
+    <line x1="32" y1="96" x2="380" y2="96" stroke="#1565c0" stroke-width="1.8"/> <!-- Strikethrough done -->
+    <text x="330" y="85" font-family="'Courier New', monospace" font-size="10px" fill="#2e7d32">DISPATCHED</text>
+
+    <!-- Row 2 -->
+    <line x1="30" y1="165" x2="385" y2="165" stroke="#bbdefb" stroke-width="1"/>
+    <text x="35" y="145" class="handwritten">05-Oct | V**** Switchgear | SS Bracket | 120 pcs</text>
+    <text x="35" y="160" class="handwritten-red">→ Rev 2 drawing sent! Stop old cut!</text>
+
+    <!-- Row 3 -->
+    <line x1="30" y1="220" x2="385" y2="220" stroke="#bbdefb" stroke-width="1"/>
+    <text x="35" y="200" class="handwritten">06-Oct | Micro**** Engg | Base Plate 12mm | 4 pcs</text>
+    <text x="35" y="215" class="handwritten">Plate cut ok; Manoj ko bhej diya</text>
+
+    <!-- Row 4 -->
+    <line x1="30" y1="275" x2="385" y2="275" stroke="#bbdefb" stroke-width="1"/>
+    <text x="35" y="255" class="handwritten">07-Oct | Delta**** Panels | 600 kVA Frame | 2 set</text>
+    <text x="35" y="270" class="handwritten-red">POWDER COAT MEIN ATKA HAI (Shade 7035)</text>
+
+    <!-- Row 5 -->
+    <line x1="30" y1="330" x2="385" y2="330" stroke="#bbdefb" stroke-width="1"/>
+    <text x="35" y="310" class="handwritten">08-Oct | S*** Power | Battery Stand 4 tier | 15 pcs</text>
+    <text x="35" y="325" class="handwritten">Advance baki ₹25,000 - Hold on bilty</text>
+
+    <!-- Grease stain overlay simulation -->
+    <circle cx="280" cy="240" r="45" fill="#f57f17" opacity="0.12"/>
+    <circle cx="285" cy="242" r="30" fill="#f57f17" opacity="0.15"/>
+    <text x="250" y="245" font-family="'Courier New', monospace" font-size="9px" fill="#795548" opacity="0.6">[Machine Oil Smudge]</text>
+
+    <!-- Notes box -->
+    <rect x="35" y="370" width="345" height="150" fill="#f5f5f5" stroke="#ccc" rx="4"/>
+    <text x="45" y="395" class="label" style="font-size: 11px; fill: #d32f2f;">KEY TAKEAWAY FOR SOLUTIONS TEAM:</text>
+    <text x="45" y="418" font-family="'Courier New', monospace" font-size="10.5px" fill="#333">• Single-line strikethrough is the only 'status update'.</text>
+    <text x="45" y="438" font-family="'Courier New', monospace" font-size="10.5px" fill="#333">• Zero link to raw material inventory or remnant scrap.</text>
+    <text x="45" y="458" font-family="'Courier New', monospace" font-size="10.5px" fill="#333">• If Rakesh is away from his desk, no one knows</text>
+    <text x="45" y="475" font-family="'Courier New', monospace" font-size="10.5px" fill="#333">  commercial terms or advance payment holds.</text>
+    <text x="45" y="500" font-family="'Courier New', monospace" font-size="10px" fill="#666">Field photo verified: 14 Oct 2026, 11:45 AM</text>
+  </g>
+
+  <!-- Right: Machine Job Ticket & Whiteboard -->
+  <g transform="translate(465, 100)">
+    <!-- Yellow Job Ticket -->
+    <rect width="395" height="270" class="card" fill="#fffde7" stroke="#fbc02d" stroke-width="2"/>
+    <text x="20" y="30" class="label">ARTIFACT 2: SHOP-FLOOR YELLOW JOB TICKET</text>
+    <text x="20" y="48" font-family="'Courier New', monospace" font-size="10.5px" fill="#777">Clipped to CNC Laser console; handled by operators</text>
+    <line x1="20" y1="58" x2="375" y2="58" stroke="#ffe082" stroke-width="1.5"/>
+
+    <text x="25" y="85" font-family="'Courier New', monospace" font-size="11px" font-weight="bold">JOB NO: #SP-842 | DATE: 06/10/26</text>
+    <text x="25" y="105" font-family="'Courier New', monospace" font-size="11px">PARTY: V**** Switchgear | MATERIAL: CRCA 2.0 mm</text>
+    <text x="25" y="125" font-family="'Courier New', monospace" font-size="11px">CUTTING PROGRAM: P-204_ENCL_SIDE.CNC</text>
+    <text x="25" y="145" font-family="'Courier New', monospace" font-size="11px">QTY ORDERED: 120 pcs | CUT QTY: 45 pcs</text>
+
+    <!-- Operator scrawl -->
+    <rect x="25" y="160" width="345" height="55" fill="#fff9c4" stroke="#e0e0e0"/>
+    <text x="35" y="180" class="handwritten-red">Gas pressure low thi; sheet jal gayi 2 pcs scrap</text>
+    <text x="35" y="200" class="handwritten">Bending wale Ramu ko de diya 43 pcs. Baaki kal</text>
+
+    <!-- Clip graphic -->
+    <rect x="180" y="-8" width="35" height="20" fill="#78909c" rx="4"/>
+
+    <!-- Bottom Whiteboard / Challan -->
+    <rect y="295" width="395" height="245" class="card" fill="#fafafa"/>
+    <text x="20" y="325" class="label">ARTIFACT 3: POWDER COATING OUTWARD CHALLAN</text>
+    <text x="20" y="343" font-family="'Courier New', monospace" font-size="10.5px" fill="#777">Pink carbon duplicate slip sent with tempo driver</text>
+    <line x1="20" y1="352" x2="375" y2="352" stroke="#e0e0e0" stroke-width="1"/>
+
+    <text x="25" y="375" font-family="'Courier New', monospace" font-size="11px">CHALLAN NO: 1408 | DATE: 07/10/26</text>
+    <text x="25" y="395" font-family="'Courier New', monospace" font-size="11px">VENDOR: National Coaters, Gali 4, Mayapuri Ph-1</text>
+    <text x="25" y="420" class="handwritten">1. Panel Enclosure Outer Body - 8 nos</text>
+    <text x="25" y="440" class="handwritten">2. Top Canopy Cover - 8 nos</text>
+    <text x="25" y="460" class="handwritten">3. Mounting Brackets (SS) - 43 pcs [Tol: 38.5 kg]</text>
+
+    <text x="25" y="495" class="handwritten-red">SHADE: RAL 7035 Structure | Urgent! Delivery by Friday!</text>
+    <text x="250" y="525" class="stamp">NO RETURN PROMISED</text>
+  </g>
+</svg>
