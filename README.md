@@ -1,4 +1,5 @@
-# Wantace Solutions Sprint — 48-Hour Assignment Portfolio
+# Wantace Solutions Sprint
+
 
 [![Solutions Sprint](https://img.shields.io/badge/Sprint-48--Hour_Challenge-blue.svg)](https://github.com/PathaSnehith/wantaance)
 [![Status](https://img.shields.io/badge/Status-Complete-success.svg)](https://github.com/PathaSnehith/wantaance)
